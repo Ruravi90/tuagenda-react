@@ -6,8 +6,8 @@ import {
   ServerStackIcon,
   RectangleStackIcon,
 } from "@heroicons/react/24/solid";
-import { Home, Profile, Tables, Notifications } from "@/pages/dashboard";
-import { SignIn, SignUp } from "@/pages/auth";
+import { Home} from "@/pages/panel";
+import HomeBrange from "./pages/sucursales/home";
 
 const icon = {
   className: "w-5 h-5 text-inherit",
@@ -15,49 +15,25 @@ const icon = {
 
 export const routes = [
   {
-    layout: "dashboard",
+    layout: "panel",
     pages: [
       {
         icon: <HomeIcon {...icon} />,
-        name: "dashboard",
-        path: "/home",
+        name: "panel",
+        path: "",
         element: <Home />,
-      },
-      {
-        icon: <UserCircleIcon {...icon} />,
-        name: "profile",
-        path: "/profile",
-        element: <Profile />,
-      },
-      {
-        icon: <TableCellsIcon {...icon} />,
-        name: "tables",
-        path: "/tables",
-        element: <Tables />,
-      },
-      {
-        icon: <InformationCircleIcon {...icon} />,
-        name: "notifications",
-        path: "/notifications",
-        element: <Notifications />,
-      },
+      }
     ],
   },
   {
-    title: "auth pages",
-    layout: "auth",
+    title: "banges pages",
+    layout: "sucursales",
     pages: [
       {
         icon: <ServerStackIcon {...icon} />,
-        name: "sign in",
-        path: "/sign-in",
-        element: <SignIn />,
-      },
-      {
-        icon: <RectangleStackIcon {...icon} />,
-        name: "sign up",
-        path: "/sign-up",
-        element: <SignUp />,
+        name: "Sucursales",
+        path: "",
+        element: <HomeBrange />,
       },
     ],
   },

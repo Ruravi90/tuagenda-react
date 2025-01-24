@@ -1,4 +1,4 @@
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, NavLink } from "react-router-dom";
 import {
   Navbar,
   Typography,
@@ -83,7 +83,7 @@ export function DashboardNavbar() {
           >
             <Bars3Icon strokeWidth={3} className="h-6 w-6 text-blue-gray-500" />
           </IconButton>
-          <Link to="/auth/sign-in">
+          <NavLink to="/auth/sign-in">
             <Button
               variant="text"
               color="blue-gray"
@@ -99,7 +99,7 @@ export function DashboardNavbar() {
             >
               <UserCircleIcon className="h-5 w-5 text-blue-gray-500" />
             </IconButton>
-          </Link>
+          </NavLink>
           <Menu>
             <MenuHandler>
               <IconButton variant="text" color="blue-gray">

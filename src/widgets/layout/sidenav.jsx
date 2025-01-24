@@ -25,6 +25,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
       } fixed inset-0 z-50 my-4 ml-4 h-[calc(100vh-32px)] w-72 rounded-xl transition-transform duration-300 xl:translate-x-0 border border-blue-gray-100`}
     >
       <div
+        // biome-ignore lint/style/noUnusedTemplateLiteral: <explanation>
         className={`relative`}
       >
         <Link to="/" className="py-6 px-8 text-center">
@@ -48,6 +49,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
       </div>
       <div className="m-4">
         {routes.map(({ layout, title, pages }, key) => (
+          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
           <ul key={key} className="mb-4 flex flex-col gap-1">
             {title && (
               <li className="mx-3.5 mt-4 mb-2">
@@ -67,11 +69,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
                     <Button
                       variant={isActive ? "gradient" : "text"}
                       color={
-                        isActive
-                          ? sidenavColor
-                          : sidenavType === "dark"
-                          ? "white"
-                          : "blue-gray"
+                        isActive ? sidenavColor : (sidenavType === "dark" ? "white"  : "blue-gray")
                       }
                       className="flex items-center gap-4 px-4 capitalize"
                       fullWidth
@@ -97,7 +95,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
 
 Sidenav.defaultProps = {
   brandImg: "/img/logo-ct.png",
-  brandName: "Material Tailwind React",
+  brandName: "Mis citas",
 };
 
 Sidenav.propTypes = {

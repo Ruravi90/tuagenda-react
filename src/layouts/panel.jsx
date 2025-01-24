@@ -9,8 +9,10 @@ import {
 } from "@/widgets/layout";
 import routes from "@/routes";
 import { useMaterialTailwindController, setOpenConfigurator } from "@/context";
+import { Home } from "@/pages/panel";
 
-export function Dashboard() {
+export function Panel() {
+  
   const [controller, dispatch] = useMaterialTailwindController();
   const { sidenavType } = controller;
 
@@ -34,14 +36,8 @@ export function Dashboard() {
         >
           <Cog6ToothIcon className="h-5 w-5" />
         </IconButton>
-        <Routes>
-          {routes.map(
-            ({ layout, pages }) =>
-              layout === "dashboard" &&
-              pages.map(({ path, element }) => (
-                <Route exact path={path} element={element} />
-              ))
-          )}
+        <Routes >
+          <Route index element={<Home />} />
         </Routes>
         <div className="text-blue-gray-600">
           <Footer />
@@ -51,6 +47,6 @@ export function Dashboard() {
   );
 }
 
-Dashboard.displayName = "/src/layout/dashboard.jsx";
+Panel.displayName = "/src/layout/panel.jsx";
 
-export default Dashboard;
+export default Panel;
